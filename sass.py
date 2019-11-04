@@ -40,7 +40,6 @@ for f in [y for x in os.walk('./src') for y in glob(os.path.join(x[0], '*.scss')
                 TOTAL += 1
                 found = re.findall(r'\d*\.?\d{1,}rem', l)
                 # print_matches(file.name, i, l, found)
-                replaced_line = replace_match(l, found)
                 file_lines = [*file_lines, *[replace_match(l, found)]]
             else:
                 file_lines = [*file_lines, *[l]]
